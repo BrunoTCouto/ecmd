@@ -1,0 +1,15 @@
+{
+  "name": "easy-cli",
+  "version": "0.0.1",
+  "description": "easier way to do commands in cmd",
+  "main": "ecmd.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "brutom",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.12.2",
+    "cross-spawn": "^5.1.0"
+  }
+}
