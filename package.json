@@ -1,5 +1,5 @@
 {
-  "name": "easy-cli",
+  "name": "ecmd",
   "version": "0.0.1",
   "description": "easier way to do commands in cmd",
   "main": "ecmd.js",

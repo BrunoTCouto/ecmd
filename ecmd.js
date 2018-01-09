@@ -20,20 +20,26 @@ function Cmd() {
             }
         }
 
-        for (x = 0; x < values.length; x++) {
-            console.log(values)
-            add(values[x][0], function (value) {
-                child.stdin.write(value + '\n');
-            }, values[x][1]);
+        if (values != null) {
+            for (x = 0; x < values.length; x++) {
+                console.log(values)
+                add(values[x][0], function (value) {
+                    child.stdin.write(value + '\n');
+                }, values[x][1]);
+            }
         }
+
         //----- Pseudo switch -----
 
         //----- set code to be executed and execute-----
-        var child = spawn(command, parameters, {
-            stdout: 'inherit',
-            stdin: 'inherit',
-            shell: true
-        });
+        if (command != null  && command !=""){
+            var child = spawn(command, parameters, {
+                stdout: 'inherit',
+                stdin: 'inherit',
+                shell: true
+            });
+
+        
         //----- set code to be executed and execute-----
 
         console.log("Executing: " + command + " " + parameters)
@@ -46,10 +52,13 @@ function Cmd() {
             //----- put values into user prompted values -----
 
             //----- End Cli -----
-            Cli.prototype.end = function () {
+            Cmd.prototype.end = function () {
                 child.stdin.end();
             }
         //----- End Cli -----
+    }else{
+        console.log("ecmd command cannot be null!")
+    }
 
     }
 }
