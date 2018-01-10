@@ -7,9 +7,9 @@ function Cmd() {
         var callbacks = {};
 
         function add(_case, fn, value) {
-            callbacks[_case] = callbacks[_case] || [];
-            callbacks[_case]['function'] = fn
-            callbacks[_case]['value'] = value
+            callbacks[_case] = callbacks[_case] || {};
+            callbacks[_case].function = fn
+            callbacks[_case].value = value
         }
 
         function pseudoSwitch(value) {
@@ -50,9 +50,9 @@ function Cmd() {
                 //----- put values into user prompted values -----
 
                 //----- End Cli -----
-                Cmd.prototype.end = function () {
-                    child.stdin.end();
-                }
+                child.on('close', (status)=>{
+                    child.stdin.end()
+                });
             //----- End Cli -----
         } else {
             console.log("ecmd command cannot be null!")
