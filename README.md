@@ -13,7 +13,7 @@ I created this npm with the intention of facilitating the execution of commands 
 OS X & Linux & Windows:
 
 ```sh
-npm install ecmd
+npm install ecmd --save
 ```
 
 ## Usage example
