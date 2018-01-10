@@ -1,8 +1,8 @@
 # eCmd
-> Easier way to do commands in cmd
+> Easier way to do commands in cmd through Node.js
 
-[![NPM Version][npm-image]][https://www.npmjs.com/package/ecmd]
-[![Downloads Stats][npm-downloads]][https://www.npmjs.com/package/ecmd]
+<!-- [![NPM Version][npm-image]][https://www.npmjs.com/package/ecmd]
+[![Downloads Stats][npm-downloads]][https://www.npmjs.com/package/ecmd] -->
 
 I created this npm with the intention of facilitating the execution of commands in the CMD that need many parameters and that need "interaction with the user" like asking the password or permission to perform some command ...
 
@@ -31,11 +31,15 @@ var cli = require('ecmd')
 var Cli = new cli()
 Cli.execute("command", ['param1','param2'],[['line','user answer'],['line','user answer']])
 ```
-command is the command expected do be done like "tree" in windows
-param is an array of are the parameters that accompany the command, can be 0 or more parameters
-line is the text in the line that is asking for user interaction. Ex: "name:"
-user answer is the user interaction expected for the line param. Ex: "Bruno"
-You can have the much as you want of lines and user answer
+>command is the command expected do be done like "tree" in windows
+
+>param is an array of are the parameters that accompany the command, can be 0 or more parameters
+
+>line is the text in the line that is asking for user interaction. Ex: "name:"
+
+>user answer is the user interaction expected for the line param. Ex: "Bruno"
+
+>You can have the much as you want of lines and user answer
 
 Simple command
 ```js

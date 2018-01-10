@@ -1,7 +1,7 @@
 {
   "name": "ecmd",
-  "version": "0.0.1",
-  "description": "easier way to do commands in cmd",
+  "version": "0.0.3",
+  "description": "Easier way to do commands in cmd through Node.js",
   "main": "ecmd.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,5 +11,14 @@
   "dependencies": {
     "commander": "^2.12.2",
     "cross-spawn": "^5.1.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrunoTCouto/ecmd.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BrunoTCouto/ecmd/issues"
+  },
+  "homepage": "https://github.com/BrunoTCouto/ecmd#readme"
 }
