@@ -107,6 +107,8 @@ npm test
 * 0.1.0
     * The first proper release
     * CHANGE: Rename `foo()` to `bar()` -->
+* 0.0.12
+    * Added Promise Callbacks
 * 0.0.1
     * First release
 
