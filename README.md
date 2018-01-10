@@ -31,7 +31,7 @@ var cli = require('ecmd')
 var Cli = new cli()
 Cli.execute("command", ['param1','param2'],[['line','user answer'],['line','user answer']])
 ```
->command is the command expected do be done like "tree" in windows
+>command is the command expected to be done like "tree" in windows
 
 >param is an array of are the parameters that accompany the command, can be 0 or more parameters
 
@@ -63,7 +63,7 @@ Command with params and User Interaction
 var cli = require('ecmd')
 
 var Cli = new cli()
-Cli.execute("cf",['login'],[['Email>','bruno@icloud.com'],['Password>','Passw0rd']])
+Cli.execute("npm",['init'],[['name: (npm init)','test'],['version: (1.0.0)','0.0.1'],['description:',''],['entry point: (index.js)',''],['test command:',''],['git repository:',''],['keywords:',''],['author:','brutom'],['license: (ISC)',''],['Is this ok? (yes)','yes'],])
 ```
 
 <!-- ## Development setup
