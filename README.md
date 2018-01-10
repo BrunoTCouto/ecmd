@@ -34,8 +34,8 @@ Cli.execute("command", ['param1','param2'],[['line','user answer'],['line','user
 >user answer is the user interaction expected for the line param. Ex: "Bruno"
 
 >You can have the much as you want of lines and user answer
-  
-
+<br />
+<br />
 Simple command
 ```js
 var cli = require('ecmd')
@@ -43,8 +43,8 @@ var cli = require('ecmd')
 var Cli = new cli()
 Cli.execute("tree")
 ```
-  
-
+<br />
+<br />
 Command with params
 ```js
 var cli = require('ecmd')
@@ -52,8 +52,8 @@ var cli = require('ecmd')
 var Cli = new cli()
 Cli.execute("mkdir",['Bruno'])
 ```
-  
-  
+<br />
+<br />
 Command with params and User Interaction
 ```js
 var cli = require('ecmd')
