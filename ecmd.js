@@ -15,14 +15,12 @@ function Cmd() {
         function pseudoSwitch(value) {
             if (callbacks[value]) {
                 obj = callbacks[value]
-                console.log(obj)
                 obj['function'](obj['value']);
             }
         }
 
         if (values != null) {
             for (x = 0; x < values.length; x++) {
-                console.log(values)
                 add(values[x][0], function (value) {
                     child.stdin.write(value + '\n');
                 }, values[x][1]);
@@ -32,33 +30,33 @@ function Cmd() {
         //----- Pseudo switch -----
 
         //----- set code to be executed and execute-----
-        if (command != null  && command !=""){
+        if (command != null && command != "") {
             var child = spawn(command, parameters, {
                 stdout: 'inherit',
                 stdin: 'inherit',
                 shell: true
             });
 
-        
-        //----- set code to be executed and execute-----
 
-        console.log("Executing: " + command + " " + parameters)
+            //----- set code to be executed and execute-----
 
-        //----- put values into user prompted values -----
-        child.stdout.on('data', (data) => {
-                console.log(data.toString())
-                pseudoSwitch(data.toString().trim())
-            }),
+            console.log("Executing: " + command + " " + parameters)
+
             //----- put values into user prompted values -----
+            child.stdout.on('data', (data) => {
+                    console.log(data.toString())
+                    pseudoSwitch(data.toString().trim())
+                }),
+                //----- put values into user prompted values -----
 
+                //----- End Cli -----
+                Cmd.prototype.end = function () {
+                    child.stdin.end();
+                }
             //----- End Cli -----
-            Cmd.prototype.end = function () {
-                child.stdin.end();
-            }
-        //----- End Cli -----
-    }else{
-        console.log("ecmd command cannot be null!")
-    }
+        } else {
+            console.log("ecmd command cannot be null!")
+        }
 
     }
 }
