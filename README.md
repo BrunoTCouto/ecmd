@@ -23,7 +23,11 @@ Expected params:
 var cli = require('ecmd')
 
 var Cli = new cli()
-Cli.execute("command", ['param1','param2'],[['line','user answer'],['line','user answer']])
+Cli.execute("command", ['param1','param2'],[['line','user answer'],['line','user answer']]).then(()=>{
+    console.log("Succes Callback");
+}).catch(()=>{
+    console.log("Error Callback")
+})
 ```
 >command is the command expected to be done.Ex: "tree" in windows
 
@@ -35,6 +39,8 @@ Cli.execute("command", ['param1','param2'],[['line','user answer'],['line','user
 
 >The last array accept 0 or more arrays of "line" and 'user answer'
 
+>Use the callback to know when the command is completed with success or error and execute some code...
+
 <br />
 <br />
 
@@ -43,7 +49,11 @@ Simple command
 var cli = require('ecmd')
 
 var Cli = new cli()
-Cli.execute("tree")
+Cli.execute("tree").then(()=>{
+    console.log("Command finished");
+}).catch(()=>{
+    console.log("Command not executed")
+})
 ```
 
 <br />
@@ -54,7 +64,11 @@ Command with params
 var cli = require('ecmd')
 
 var Cli = new cli()
-Cli.execute("mkdir",['Bruno'])
+Cli.execute("mkdir",['Bruno']).then(()=>{
+    console.log("Command finished");
+}).catch(()=>{
+    console.log("Command not executed")
+})
 ```
 
 <br />
@@ -65,7 +79,11 @@ Command with params and User Interaction
 var cli = require('ecmd')
 
 var Cli = new cli()
-Cli.execute("npm",['init'],[['name: (npm init)','test'],['version: (1.0.0)','0.0.1'],['description:',''],['entry point: (index.js)',''],['test command:',''],['git repository:',''],['keywords:',''],['author:','brutom'],['license: (ISC)',''],['Is this ok? (yes)','yes'],])
+Cli.execute("cf",['login'],[['Email> ',''],['Password> ','']]).then(()=>{
+    console.log("Command finished");
+}).catch(()=>{
+    console.log("Command not executed")
+})
 ```
 
 <!-- ## Development setup
