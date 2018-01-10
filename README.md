@@ -10,13 +10,7 @@ I created this npm with the intention of facilitating the execution of commands 
 
 ## Installation
 
-OS X & Linux:
-
-```sh
-npm install ecmd
-```
-
-Windows:
+OS X & Linux & Windows:
 
 ```sh
 npm install ecmd
