@@ -95,9 +95,9 @@ npm test
 
 Bruno Couto
 
-Distributed under the XYZ license. See ``LICENSE`` for more information.
+<!-- Distributed under the XYZ license. See ``LICENSE`` for more information.
 
-[https://github.com/yourname/github-link](https://github.com/BrunoTCouto/ecmd)
+[https://github.com/yourname/github-link](https://github.com/BrunoTCouto/ecmd) -->
 
 ## Contributing
 
