@@ -34,6 +34,7 @@ Cli.execute("command", ['param1','param2'],[['line','user answer'],['line','user
 >user answer is the user interaction expected for the line that is asking for user interaction. Ex: "Bruno"
 
 >The last array accept 0 or more arrays of "line" and 'user answer'
+
 <br />
 <br />
 
