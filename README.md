@@ -4,7 +4,7 @@
 <!-- [![NPM Version][npm-image]][https://www.npmjs.com/package/ecmd]
 [![Downloads Stats][npm-downloads]][https://www.npmjs.com/package/ecmd] -->
 
-I created this npm with the intention of facilitating the execution of commands in the CMD that need many parameters and that need "interaction with the user" like asking the password or permission to perform some command ...
+I created this npm with the intention of facilitating the execution of commands in the CMD that need many parameters and that need "interaction with the user" like commands that ask passwords or permission to perform some command ...
 
 <!-- ![](header.png) -->
 
