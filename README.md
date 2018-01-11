@@ -52,7 +52,7 @@ Simple command without Debug
 var cli = require('ecmd')
 
 var Cli = new cli()
-Cli.execute("tree").then(()=>{ //DEBUG ENABLED
+Cli.execute("tree").then(()=>{ //DEBUG DISABLED
     console.log("Command finished");
 }).catch(()=>{
     console.log("Command not executed")

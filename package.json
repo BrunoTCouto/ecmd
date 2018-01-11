@@ -1,6 +1,6 @@
 {
   "name": "ecmd",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Easier way to do commands in cmd through Node.js",
   "main": "ecmd.js",
   "scripts": {
