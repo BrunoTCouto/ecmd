@@ -1,7 +1,7 @@
 var spawn = require('cross-spawn');
 
 function Cmd() {
-    Cmd.prototype.execute = function (command, parameters, values) {
+    Cmd.prototype.execute = function (command, parameters, values, debug) {
         return new Promise((resolve, reject) => {
             
             //----- Pseudo switch -----
@@ -42,10 +42,19 @@ function Cmd() {
 
                 //----- put values into user prompted values -----
                 child.stdout.on('data', (data) => {
+                    if(debug == true){
+                    console.log('*-*START LINE*-*')
+                    console.log(data.toString())
+                    console.log('*-*END LINE*-*')
+                    pseudoSwitch(data.toString().trim())
+                }else{
                     console.log(data.toString())
                     pseudoSwitch(data.toString().trim())
+                }
                 });
+                //----- put values into user prompted values -----
 
+                //----- End Cli -----
                 child.on('error', (status) => {});
 
                 child.on('close', (status) => {
@@ -57,13 +66,6 @@ function Cmd() {
                         resolve()
                     }
                 });
-                //----- put values into user prompted values -----
-
-                //----- End Cli -----
-
-
-
-
                 //----- End Cli -----
             } else {
                 console.log("ecmd command cannot be null!")

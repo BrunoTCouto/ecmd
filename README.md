@@ -4,7 +4,8 @@
 <!-- [![NPM Version][npm-image]][https://www.npmjs.com/package/ecmd]
 [![Downloads Stats][npm-downloads]][https://www.npmjs.com/package/ecmd] -->
 
-I created this npm with the intention of facilitating the execution of commands in the CMD that need many parameters and that need "interaction with the user".Ex: commands that ask passwords or permission to perform some action...
+I created this npm with the intention of facilitating the execution of commands in the CMD that need many parameters and that need "interaction with the user". <br/> 
+Ex: commands that ask passwords or permission to perform some action...
 
 <!-- ![](header.png) -->
 
@@ -22,14 +23,14 @@ Expected params:
 ```js
 var cli = require('ecmd')
 
-var Cli = new cli()
-Cli.execute("command", ['param1','param2'],[['line','user answer'],['line','user answer']]).then(()=>{
+var Cli = new cli()                                                                     //DEBUG HERE 
+Cli.execute("command", ['param1','param2'],[['line','user answer'],['line','user answer']], true ).then(()=>{
     console.log("Succes Callback");
 }).catch(()=>{
     console.log("Error Callback")
 })
 ```
->command is the command expected to be done.Ex: "tree" in windows
+>command is the command expected to be done. Ex: "tree" in windows
 
 >param is an array of are the parameters that goes with the command. Can be 0 or more parameters
 
@@ -39,17 +40,34 @@ Cli.execute("command", ['param1','param2'],[['line','user answer'],['line','user
 
 >The last array accept 0 or more arrays of "line" and 'user answer'
 
+>The debug option will help you dicover what is the content of a line in the CMD. In the debug option you should pass true to enable it or leave it blank to turn it off.
+
 >Use the callback to know when the command is completed with success or error and execute some code...
 
 <br />
 <br />
 
-Simple command
+Simple command without Debug
 ```js
 var cli = require('ecmd')
 
 var Cli = new cli()
-Cli.execute("tree").then(()=>{
+Cli.execute("tree").then(()=>{ //DEBUG ENABLED
+    console.log("Command finished");
+}).catch(()=>{
+    console.log("Command not executed")
+})
+```
+
+<br />
+<br />
+
+Simple command with Debug
+```js
+var cli = require('ecmd')
+
+var Cli = new cli()
+Cli.execute("tree", null,null,true).then(()=>{ //DEBUG ENABLED
     console.log("Command finished");
 }).catch(()=>{
     console.log("Command not executed")
@@ -103,10 +121,9 @@ npm test
     * CHANGE: Remove `setDefaultXYZ()`
     * ADD: Add `init()`
 * 0.1.1
-    * FIX: Crash when calling `baz()` (Thanks @GenerousContributorName!)
-* 0.1.0
-    * The first proper release
-    * CHANGE: Rename `foo()` to `bar()` -->
+    * FIX: Crash when calling `baz()` (Thanks @GenerousContributorName!) -->
+* 0.0.15
+    * Added line Debug
 * 0.0.12
     * Added Promise Callbacks
 * 0.0.1
@@ -116,9 +133,9 @@ npm test
 
 Bruno Couto
 
-<!-- Distributed under the XYZ license. See ``LICENSE`` for more information.
+Distributed under the ISC license.
 
-[https://github.com/yourname/github-link](https://github.com/BrunoTCouto/ecmd) -->
+<!-- [https://github.com/yourname/github-link](https://github.com/BrunoTCouto/ecmd) -->
 
 ## Contributing
 
